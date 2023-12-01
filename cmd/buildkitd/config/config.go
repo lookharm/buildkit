@@ -6,8 +6,12 @@ import (
 
 // Config provides containerd configuration data for the server
 type Config struct {
+	// Registries2 is Registries2
+	Registries2 map[string]resolverconfig.RegistryConfig `toml:"registry"`
+
 	// Debug is boolean
-	Debug bool `toml:"debug"`
+	// ADDASDF
+	Debug bool `toml:"debug" comment:"Debug is boolean" commented:"true"`
 
 	// Trace is boolean
 	Trace bool `toml:"trace"`
@@ -29,6 +33,7 @@ type Config struct {
 
 	// Worker is Worker
 	Workers struct {
+		// OCI is OCI
 		OCI        OCIConfig        `toml:"oci"`
 		Containerd ContainerdConfig `toml:"containerd"`
 	} `toml:"worker"`
